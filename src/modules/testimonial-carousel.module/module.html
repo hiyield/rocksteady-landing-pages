@@ -1,0 +1,11 @@
+
+<section class="{{name}}">
+
+    {% for testimonial in testimonials %}
+        <div class="testimonial">
+            <p class="testimonial__quote">{{ testimonial.quote }}</p>
+            <p class="testimonial__author">{{ testimonial.author }}</p>
+        </div>
+    {% endfor %}
+
+</section>
