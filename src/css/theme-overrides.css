@@ -760,3 +760,17 @@ tfoot td {
   color: {{ h3_font.color }};
   font-size: {{ h3_font.size ~ h3_font.size_unit }};
 }
+
+{###########################################################################}
+{############################   13. Sticky Footer ##########################}
+{###########################################################################}
+
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.body-container-wrapper {
+  flex: 1;
+}
