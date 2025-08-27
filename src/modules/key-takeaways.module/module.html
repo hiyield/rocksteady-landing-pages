@@ -1,0 +1,15 @@
+{# Key Takeaways #}
+
+<div style="min-height: 100rem; background-color: red; min-width: 5rem;" class="key-takeaways">
+    {% if module.key_takeaways|length > 0 %}
+        <ul class="key-takeaways__list">
+        {% for item in module.key_takeaways %}
+            {% if item.takeaway %}
+            <li class="key-takeaways__item">
+                {{ item.takeaway|sanitize_html }}
+            </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
