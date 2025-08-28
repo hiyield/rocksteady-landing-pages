@@ -11,7 +11,6 @@
 }
 
 .hy-blog-post__title {
-  padding: 0 15.25rem 0 15.25rem;
   margin-bottom: 2rem;
   font-size: 4.375rem;
   line-height: 57.4px;
@@ -26,7 +25,8 @@
   gap: 2rem;
   font-weight: 500;
   font-size: 1.125rem;
-  padding: 1.5rem 15.25rem 1.5rem 15.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .hy-author-date-container {
@@ -38,14 +38,14 @@
 
 .hy-blog-post__key-takeaways {
   display: flex;
-  flex-wrap: wrap;
   background-color: #D9D9D9;
-  padding: 0 15.25rem; /* keep your padding */
 }
+
 
 .hy-image-container {
   position: relative;
-  width: 533px;
+  max-width: 33.3125rem;
+  width: 100%;
   aspect-ratio: 533 / 300;
   overflow: hidden;
 }
@@ -59,14 +59,93 @@
   left: 0;
 }
 
+.hy-key-takeaways {
+  width: auto;
+  text-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.75rem;
+  flex-direction: column;
+  font-size: 1.125rem;
+  background-color: #5F2467;
+  color: white;
+  padding: 2rem;
+}
+
+.hy-blog-post__key-takeaways:not(:has(.hy-image-container)) .hy-key-takeaways {
+  width: 100%;
+}
+
+.hy-key-takeaways-single {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.hy-key-takeaways-seperator {
+  height: 2.1875rem;
+  width: 0.25rem;
+  background-color: white;
+}
+
 .hy-blog-post__meta a {
   color: inherit !important;
 }
 
-.hy-blog-post__body {
-  padding: 0 15.25rem 0 15.25rem;
+.hy-share-container {
+  display: flex;
+  flex-direction: row;
+  color: #2A2B33;
+  gap: 1rem;
+  align-items: center;
+}
+.hy-social-links {
+  align-items: center;
+  display: flex;
+  gap: 0.625rem;
+  justify-content: center;
 }
 
-.hy-share-container {
-  color: #2A2B33;
+.hy-social-links__icon {
+  border-radius: 9999px;
+  background: #D9D9D9;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease;
+}
+
+.hy-social-links__icon:hover {
+  background: #252B5A;
+}
+
+.hy-social-links__icon svg {
+  fill: darkgray;
+  height: 1.125rem;
+  width: 1.125rem;
+  transition: all 300ms ease;
+}
+
+.hy-social-links__icon:hover svg {
+  fill: white;
+}
+
+@media screen and (max-width: 568px) {
+  .hy-blog-post__key-takeaways {
+    flex-direction: column;
+  }
+
+  .hy-image-container {
+    aspect-ratio: 327 / 184;
+  }
+
+  .hy-author-date-container {
+    flex-direction: column;
+  }
+
+  .hy-author-date-container .hy-author-date-seperator {
+    display: none;
+  }
 }

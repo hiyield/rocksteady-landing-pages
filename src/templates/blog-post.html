@@ -10,55 +10,90 @@
 {% block body %}
 <div class="body-container body-container--blog-post">
 
-  {# Blog post #}
-
+   {# Blog post #}
   <div class="content-wrapper">
     <article class="hy-blog-post">
-      <h1 class="hy-blog-post__title hy-gradient-purple-blue">{{ content.name|sanitize_html }}</h1>
-      <!-- Featured Image + Key Takeaways -->
+      <h1 class="hy-blog-post__title hy-gradient-purple-blue hy-prose-container">
+        {{ content.name|sanitize_html }}
+      </h1>
 
-      <div class="hy-blog-post__key-takeaways">
+      {# Key takeaways section #}
+      <div class="hy-blog-post__key-takeaways hy-prose-container">
 
+        {% if content.featured_image %}
         <div class="hy-image-container">
-          <img src="{{ content.featured_image }}" />
+          <img src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text|default('Blog featured image') }}" />
         </div>
+        {% endif %}
 
-        <!-- Key Takeaways Block -->
+        <div class="hy-key-takeaways">
+          <div class="hy-key-takeaways-single">
+            <div class="hy-key-takeaways-seperator"></div>
+            {% module "blog_key_takeaway_1" path="@hubspot/text", label="Enter the first key takeaway point" %}
+          </div>
+
+          <div class="hy-key-takeaways-single">
+            <div class="hy-key-takeaways-seperator"></div>
+            {% module "blog_key_takeaway_2" path="@hubspot/text", label="Enter the secondary key takeaway point" %}
+          </div>
+
+          <div class="hy-key-takeaways-single">
+            <div class="hy-key-takeaways-seperator"></div>
+            {% module "blog_key_takeaway_3" path="@hubspot/text", label="Enter the third key takeaway point" %}
+          </div>
+        </div>
       </div>
 
-      <div class="hy-blog-post__meta">
+      {# Meta section #}
+      <div class="hy-blog-post__meta hy-prose-container">
         <div class="hy-author-date-container">
+          {% if content.publish_date %}
           <time datetime="{{ content.publish_date }}" class="blog-post__timestamp"> 
             {{ content.publishDate|datetimeformat('%e %B %Y') }} 
           </time>
-
-          |
-        
+          {% endif %}
+          
+          {% if content.blog_post_author %}
+          <span class="hy-author-date-seperator">|</span>
           <span>
             By
             <a href="{{ blog_author_url(group.id, content.blog_post_author.slug)|escape_url }}" rel="author">
               {{ content.blog_post_author.display_name|escape_html }}
             </a>
           </span>
+          {% endif %}
         </div>
 
+        {% if content.url %}
         <div class="hy-share-container">
           <span>Share:</span>
+          <div class="hy-social-links">
+            {% if content.title %}
+            <a class="hy-social-links__link" href="https://www.facebook.com/sharer/sharer.php?u={{ content.url }}&t={{ content.title }}" target="_blank" rel="noopener">
+              {% icon extra_classes="hy-social-links__icon", name="facebook", icon_set="fontawesome-6.4.2", purpose="semantic", style="SOLID", title="Facebook Icon", unique_in_loop=True %}
+            </a>
 
-          {% module "social-follow"
-            path="../../modules/social-follow",
-            label="Social Sharing"
-          %}
+            <a class="hy-social-links__link" href="https://x.com/intent/tweet?text={{ content.title }}&url={{ content.url }}" target="_blank" rel="noopener">
+              {% icon extra_classes="hy-social-links__icon", name="x-twitter", icon_set="fontawesome-6.4.2", purpose="semantic", style="SOLID", title="X Icon", unique_in_loop=True %}
+            </a>
+            {% endif %}
 
+            <a class="hy-social-links__link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ content.url }}" target="_blank" rel="noopener">
+              {% icon extra_classes="hy-social-links__icon", name="linkedin", icon_set="fontawesome-6.4.2", purpose="semantic", style="SOLID", title="LinkedIn Icon", unique_in_loop=True %}
+            </a>
+          </div>
         </div>
+        {% endif %}
 
         <div class="hy-seperator"></div>
       </div>
 
-
-      <div class="hy-blog-post__body">
+      {# Blog body #}
+      {% if content.post_body %}
+      <div class="hy-blog-post__body hy-prose-container">
         {{ content.post_body }}
       </div>
+      {% endif %}
 
     </article>
   </div>

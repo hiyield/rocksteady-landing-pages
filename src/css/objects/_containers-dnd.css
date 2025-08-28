@@ -1,12 +1,7 @@
 .content-wrapper {
+  max-width: 1350px !important;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
-}
-
-@media screen and (min-width: 1380px) {
-  .content-wrapper {
-    padding: 0;
-  }
 }
 
 .dnd-section > .row-fluid {
@@ -22,3 +17,30 @@
     padding: 0;
   }
 }
+
+.hy-prose-container {
+  padding-left: 15.25rem;
+  padding-right: 15.25rem;
+}
+
+@media screen and (max-width: 1350px) {
+  .hy-prose-container {
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .hy-prose-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hy-prose-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
