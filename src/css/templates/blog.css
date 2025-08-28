@@ -37,8 +37,13 @@
 }
 
 .hy-blog-post__key-takeaways {
+  width: 100%;
+  background-color: #F1F1F1;
+}
+
+
+.hy-blog-post__key-takeaways .hy-prose-container {
   display: flex;
-  background-color: #D9D9D9;
 }
 
 
@@ -133,7 +138,7 @@
 }
 
 @media screen and (max-width: 568px) {
-  .hy-blog-post__key-takeaways {
+  .hy-blog-post__key-takeaways .hy-prose-container {
     flex-direction: column;
   }
 

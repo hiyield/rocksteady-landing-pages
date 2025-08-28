@@ -1,5 +1,5 @@
 .content-wrapper {
-  max-width: 1350px !important;
+  max-width: 84.375rem !important;
   width: 100%;
   margin: 0 auto;
 }
@@ -19,28 +19,28 @@
 }
 
 .hy-prose-container {
-  padding-left: 15.25rem;
-  padding-right: 15.25rem;
+  max-width: 53.875rem;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1350px) {
   .hy-prose-container {
-    padding-left: 12.5rem;
-    padding-right: 12.5rem;
+    max-width: 1350px;
+    margin: 0 7.5rem;
   }
 }
 
 @media screen and (max-width: 1080px) {
   .hy-prose-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    max-width: 1080px;
+    margin: 0 3rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .hy-prose-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    max-width: 768px;
+    margin: 0 1.5rem;
   }
 }
 
