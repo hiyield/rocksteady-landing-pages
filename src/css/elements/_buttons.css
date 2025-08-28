@@ -68,6 +68,13 @@ button:disabled,
     -webkit-text-stroke: 0; /* reset stroke */
 }
 
+.hy-button-purple {
+  background: #5F2467;
+  color: white;
+  -webkit-text-stroke: 0; /* reset stroke */
+  text-transform: normal;
+}
+
 /* On hover, swap costumes */
 .hy-button-primary:hover {
     background: #fff;
