@@ -1,0 +1,13 @@
+{
+  "global": false,
+  "icon": "IMAGE_TWO_COLUMN",
+  "label": "Two Column Block",
+  "is_available_for_new_content": true,
+  "host_template_types": ["PAGE", "BLOG_POST"],
+  "css_assets": [
+    {
+      "autoload": true,
+      "path": "module.css"
+    }
+  ]
+}

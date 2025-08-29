@@ -1,0 +1,24 @@
+[
+    {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "type": "image"
+    },
+    {
+        "name": "image_position",
+        "label": "Image Position",
+        "type": "boolean",
+        "default": true,
+        "display": "toggle",
+        "inline_help_text": "If enabled, image will be on the left. If disabled, image will be on the right."
+    },
+    {
+        "name": "content",
+        "label": "Content",
+        "required": false,
+        "locked": false,
+        "type": "richtext"
+    }
+]
