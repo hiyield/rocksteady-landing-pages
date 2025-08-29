@@ -90,3 +90,35 @@ img {
   font-size: 0.583rem;
   word-break: normal;
 }
+
+/* HY Gradient Classes */
+.hy-gradient-purple-blue {
+  background: linear-gradient(135deg, #A473AF 0%, #252B5A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+  color: transparent; /* Fallback */
+}
+
+.hy-gradient-blue-green {
+  background: linear-gradient(135deg, #69C3C6 0%, #338988 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+  color: transparent; /* Fallback */
+}
+
+.hy-gradient-blue {
+  background: linear-gradient(135deg, #009FE3 0%, #006DB0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+  color: transparent; /* Fallback */
+}
+
+.hy-seperator {
+  height: 1px;
+  width: 100%;
+  background-color: #D9D9D9;
+  margin-bottom: 2.5rem;
+}

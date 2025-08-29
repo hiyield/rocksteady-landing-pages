@@ -1,0 +1,21 @@
+[
+  {
+    "label": "Key Takeaways",
+    "name": "key_takeaways",
+    "type": "group",
+    "occurrence": {
+      "default": 3,
+      "min": 1,
+      "max": 10
+    },
+    "children": [
+      {
+        "label": "Takeaway",
+        "name": "takeaway",
+        "type": "richtext",
+        "required": true,
+        "default": "Add a key takeaway here"
+      }
+    ]
+  }
+]

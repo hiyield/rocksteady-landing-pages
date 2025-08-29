@@ -1,12 +1,7 @@
 .content-wrapper {
+  max-width: 84.375rem !important;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
-}
-
-@media screen and (min-width: 1380px) {
-  .content-wrapper {
-    padding: 0;
-  }
 }
 
 .dnd-section > .row-fluid {
@@ -22,3 +17,30 @@
     padding: 0;
   }
 }
+
+.hy-prose-container {
+  max-width: 53.875rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1350px) {
+  .hy-prose-container {
+    max-width: 1350px;
+    margin: 0 7.5rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .hy-prose-container {
+    max-width: 1080px;
+    margin: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hy-prose-container {
+    max-width: 768px;
+    margin: 0 1.5rem;
+  }
+}
+
