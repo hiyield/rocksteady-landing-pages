@@ -8,7 +8,6 @@
 
 .body-container.body-container--blog-post .content-wrapper {
   background-color: white;
-  padding-top: 3.125rem;
   padding-bottom: 5rem;
 }
 
@@ -23,6 +22,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   gap: 2rem;
   font-weight: 500;
@@ -142,7 +142,6 @@
 .hy-blog-related-posts {
   position: relative;
   width: 100%;
-  margin-top: 4rem;
 }
 
 .hy-blog-related-posts__post {
@@ -208,7 +207,27 @@
   background: #F1F1F1;
   overflow: hidden;
   display: flex;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   flex-direction: column;
+}
+
+.hy-blog-related-posts__post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hy-blog-related-posts__post:hover .hy-button-purple {
+  background: transparent;
+  color: #5F2467;
+  border-color: #5F2467;
+  -webkit-text-stroke: 0;
+}
+
+.hy-blog-related-posts__post:focus-visible {
+  outline: 3px solid #5F2467;
+  outline-offset: 4px;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hy-blog-related-posts__post-image-wrapper {
@@ -287,6 +306,8 @@
     flex-direction: row;
     padding: 0.625rem;
     gap: 0.6875rem;
+    transition: none !important;
+    transform: none !important;
   }
 
   .hy-blog-related-posts__title {

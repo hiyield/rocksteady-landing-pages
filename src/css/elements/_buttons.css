@@ -61,17 +61,16 @@ button:disabled,
     -webkit-text-stroke: 0.5px black;
 }
 
-/* Secondary look */
 .hy-button-secondary {
     background: #fff;
     color: #252B5A;
-    -webkit-text-stroke: 0; /* reset stroke */
+    -webkit-text-stroke: 0;
 }
 
 .hy-button-purple {
   background: #5F2467;
   color: white;
-  -webkit-text-stroke: 0; /* reset stroke */
+  -webkit-text-stroke: 0;
   text-transform: normal;
 }
 
@@ -86,5 +85,28 @@ button:disabled,
     background: transparent;
     color: #fff;
     -webkit-text-stroke: 0.5px black;
+}
+
+/* Purple hover */
+.hy-button-purple:hover {
+  background: transparent;
+  color: #5F2467;
+  border-color: #5F2467;
+  -webkit-text-stroke: 0;
+}
+
+.hy-button-primary:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.hy-button-secondary:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.hy-button-purple:focus-visible {
+  outline: 3px solid #5F2467;
+  outline-offset: 3px;
 }
 
