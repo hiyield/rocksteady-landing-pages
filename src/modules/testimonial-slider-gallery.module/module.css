@@ -2,6 +2,8 @@
 
 .slider__container {
   position: relative;
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +12,6 @@
 .slider__background {
   position: absolute;
   width: 100%;
-  background: rgba(164, 115, 175, 0.10);
   height: 12.5rem;
 }
 
@@ -40,7 +41,7 @@
   opacity: 1 !important;
 }
 
-.splide__slide__contents {
+.hy-testimonial-slider-splide__slide__contents {
   position: relative;
   min-height: 20rem;
   height: auto;
@@ -117,11 +118,11 @@ button.splide__arrow svg {
 }
 
 button.splide__arrow--prev {
-  left: 5vw;
+  left: 0;
 }
 
 button.splide__arrow--next {
-  right: 5vw;
+  right: 0;
 }
 
 .splide__pagination__page {

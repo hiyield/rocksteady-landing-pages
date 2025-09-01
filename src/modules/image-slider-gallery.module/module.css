@@ -85,11 +85,11 @@ button.splide__arrow svg {
 }
 
 button.splide__arrow--prev {
-  left: 5vw;
+  left: 0;
 }
 
 button.splide__arrow--next {
-  right: 5vw;
+  right: 0;
 }
 
 .splide__pagination__page {
