@@ -100,11 +100,18 @@
 
 .hy-share-container {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   color: #2A2B33;
   gap: 1rem;
   align-items: center;
 }
+
+.hy-share-container.mobile {
+  display: none;
+}
+
+
 .hy-social-links {
   align-items: center;
   display: flex;
@@ -152,5 +159,14 @@
 
   .hy-author-date-container .hy-author-date-seperator {
     display: none;
+  }
+
+  .hy-share-container.desktop {
+    display: none;
+  }
+
+  .hy-share-container.mobile {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
