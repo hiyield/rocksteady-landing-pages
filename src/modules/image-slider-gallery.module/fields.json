@@ -1,0 +1,28 @@
+[
+  {
+    "id": "slides",
+    "name": "slides",
+    "label": "Slide",
+    "occurrence": {
+      "min": 0,
+      "max": 20,
+      "sorting_label_field": "slide.img",
+      "default": 5
+    },
+    "children": [
+      {
+        "id": "slides.img",
+        "name": "img",
+        "label": "Image",
+        "type": "image",
+        "inline_help_text": "For best results, add images of similar shape and size. Aim for 640px x 360px (Width x Height)",
+        "default": {
+          "src": "",
+          "alt": "Default image alt text"
+        }
+      }
+    ],
+    "type": "group",
+    "tab": "CONTENT"
+  }
+]
