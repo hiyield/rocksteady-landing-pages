@@ -9,8 +9,8 @@
 
 .hy-author-card__image {
     flex-shrink: 0;
-    width: 10.625rem;
-    height: 15rem;
+    width: 170px !important;
+    height: 240px !important;
     object-fit: cover;
 }
 
