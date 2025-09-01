@@ -1,28 +1,7 @@
 [
     {
-        "name": "author_name",
-        "label": "Author Name",
-        "required": true,
-        "type": "text"
-    },
-    {
         "name": "author_job_title",
         "label": "Author Job Title",
         "type": "text"
-    },
-    {
-        "name": "author_description",
-        "label": "Author Description",
-        "type": "richtext"
-    },
-    {
-        "name": "author_image",
-        "label": "Author Image",
-        "type": "image"
-    },
-    {
-        "name": "author_link",
-        "label": "Author Link",
-        "type": "url"
     }
 ]

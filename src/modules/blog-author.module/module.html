@@ -1,12 +1,14 @@
+{% set blog_author = content.blog_post_author %}
+
 <div class="hy-author-card">
-    {% if module.author_image.src %}
-        <img class="hy-author-card__image" src="{{ module.author_image.src }}" alt="{{ module.author_name }}">
+    {% if blog_author.avatar %}
+        <img class="hy-author-card__image" src="{{ blog_author.avatar }}" alt="{{ blog_author.display_name }}">
     {% endif %}
 
     <div class="hy-author-card__info">
-        {% if module.author_name %}
+        {% if blog_author.display_name %}
         <h4 class="hy-author-card__name">
-            {{ module.author_name }}
+            {{ blog_author.display_name }}
         </h4>
         {% endif %}
 
@@ -14,14 +16,14 @@
         <p class="hy-author-card__title">{{ module.author_job_title }}</p>
         {% endif %}
 
-        {% if module.author_description %}
+        {% if blog_author.bio %}
         <div class="hy-author-card__description">
-            {{ module.author_description }}
+            {{ blog_author.bio }}
         </div>
         {% endif %}
 
-        {% if module.author_link.href %}
-        <a href="{{ module.author_link.href }}" class="hy-button hy-button-purple">
+        {% if blog_author.website %}
+        <a href="{{ blog_author.website }}" class="hy-button hy-button-purple">
             View Author
         </a>
         {% endif %}
