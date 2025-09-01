@@ -1,0 +1,29 @@
+<div class="hy-author-card">
+    {% if module.author_image.src %}
+        <img class="hy-author-card__image" src="{{ module.author_image.src }}" alt="{{ module.author_name }}">
+    {% endif %}
+
+    <div class="hy-author-card__info">
+        {% if module.author_name %}
+        <h4 class="hy-author-card__name">
+            {{ module.author_name }}
+        </h4>
+        {% endif %}
+
+        {% if module.author_job_title %}
+        <p class="hy-author-card__title">{{ module.author_job_title }}</p>
+        {% endif %}
+
+        {% if module.author_description %}
+        <div class="hy-author-card__description">
+            {{ module.author_description }}
+        </div>
+        {% endif %}
+
+        {% if module.author_link.href %}
+        <a href="{{ module.author_link.href }}" class="hy-button hy-button-purple">
+            {{ module.author_link.text or "View Author" }}
+        </a>
+        {% endif %}
+    </div>
+</div>

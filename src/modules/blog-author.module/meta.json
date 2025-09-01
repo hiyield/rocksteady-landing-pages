@@ -1,0 +1,5 @@
+{
+    "label": "Author Card",
+    "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+    "global": false
+}
