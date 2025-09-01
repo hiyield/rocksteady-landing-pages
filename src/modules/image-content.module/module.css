@@ -9,6 +9,7 @@
 .hy-two-col-block__image,
 .hy-two-col-block__content {
     flex: 1;
+    font-size: 1.125rem;
 }
 
 
