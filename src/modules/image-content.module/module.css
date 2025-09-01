@@ -11,15 +11,24 @@
     flex: 1;
 }
 
-.hy-two-col-block__image {
+
+.hy-two-col-block__image.align-top {
+    align-self: flex-start;
+}
+
+.hy-two-col-block__image.align-center {
     align-self: center;
+}
+
+.hy-two-col-block__image.align-bottom {
+    align-self: flex-end;
 }
 
 .hy-two-col-block__image img {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 414 / 232;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 

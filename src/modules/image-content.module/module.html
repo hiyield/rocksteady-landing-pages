@@ -1,21 +1,21 @@
 <div class="hy-two-col-block">
     {% if module.image_position %}
-        <div class="hy-two-col-block__image">
-        {% if module.image.src %}
-            <img src="{{ module.image.src }}" alt="{{ module.image.alt|escape }}" />
-        {% endif %}
+        <div class="hy-two-col-block__image {{ module.content_vertical_align }}">
+            {% if module.image.src %}
+                <img src="{{ module.image.src }}" alt="{{ module.image.alt|escape }}" />
+            {% endif %}
         </div>
         <div class="hy-two-col-block__content">
-        {{ module.content }}
+            {{ module.content }}
         </div>
     {% else %}
         <div class="hy-two-col-block__content">
-        {{ module.content }}
+            {{ module.content }}
         </div>
         <div class="hy-two-col-block__image">
-        {% if module.image.src %}
-            <img src="{{ module.image.src }}" alt="{{ module.image.alt|escape }}" />
-        {% endif %}
+            {% if module.image.src %}
+                <img src="{{ module.image.src }}" alt="{{ module.image.alt|escape }}" />
+            {% endif %}
         </div>
     {% endif %}
 </div>
