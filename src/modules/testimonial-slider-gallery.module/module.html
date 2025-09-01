@@ -11,22 +11,24 @@
 {# Build slides array #}
 {% if module.slides %}
     {% for slide in module.slides %}
-        {% if slide.img.src %}
-            {% set slide_image_src = resize_image_url(slide.img.src, 1200, 0, 1200) %}
+        {% if slide.icon.src %}
+            {% set slide_icon_src = resize_image_url(slide.icon.src, 1200, 0, 1200) %}
         {% else %}
-            {% set slide_image_src = loop.index is divisibleby 2
+            {% set slide_icon_src = loop.index is divisibleby 2
                 ? get_asset_url(placeholder_images.dark_image)
                 : get_asset_url(placeholder_images.light_image) %}
         {% endif %}
         {% do slides.append({
-            "alt_text": slide.img.alt,
-            "img_src": slide_image_src
+            "alt_text": slide.icon.alt,
+            "img_src": slide_icon_src
         }) %}
     {% endfor %}
 {% endif %}
 
 {% if slides %}
 <div class="slider__container" data-gallery_slider="{{ name|escape_attr }}">
+    <div class="slider__background"></div>
+
     <section class="splide__main splide" aria-label="Image slider">
         <div class="splide__arrows hs-gallery-slider-main__arrow">
             <button class="splide__arrow splide__arrow--prev" aria-label="Previous slide">
@@ -44,10 +46,24 @@
         </div>
         <div class="splide__track">
             <div class="splide__list">
-                {% for slide in slides %}
+                {% for slide in module.slides %}
                 <div class="splide__slide">
                     <div class="splide__slide__contents">
-                        
+                        {% if slide.icon.src %}
+                        <img src="{{ slide.icon.src }}" alt="{{ slide.icon.alt }}" class="splide__slide_testimonial__icon"/>
+                        {% endif %}
+
+                        {% if slide.description %}
+                        <p>
+                            {{ slide.description }}
+                        </p>
+                        {% endif %}
+
+                        {% if slide.attestant_name %}
+                        <p class="splide__slide_testimonial__attestant">
+                            {{ slide.attestant_name }}
+                        </p>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}

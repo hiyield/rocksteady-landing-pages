@@ -1,8 +1,17 @@
 /** Base splide styles found here. https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.2/dist/css/splide.min.css **/
 
 .slider__container {
-  background: rgba(164, 115, 175, 0.10);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider__background {
+  position: absolute;
   width: 100%;
+  background: rgba(164, 115, 175, 0.10);
+  height: 12.5rem;
 }
 
 .splide__slide {
@@ -13,6 +22,12 @@
 
 .splide__slide--nav {
   height: auto;
+}
+
+.splide__slide--nav-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .splide__track--nav > .splide__list > .splide__slide {
@@ -26,11 +41,54 @@
 }
 
 .splide__slide__contents {
-  display: flex;
-  height: 100%;
+  position: relative;
   min-height: 20rem;
+  height: auto;
+  width: 100%;
+  max-width: 31.25rem;
+  padding: 2.625rem 3rem;
+  background: linear-gradient(290.5deg, #5F2467 1.19%, #009FE3 98.81%);
+  color: white;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
+  -webkit-clip-path: polygon(2% 3%, 98% 0%, 100% 92%, 0% 90%);
+  clip-path: polygon(2% 3%, 98% 0%, 100% 92%, 0% 90%);
+  gap: 0 !important;
+}
+
+.splide__slide_testimonial__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.splide__slide_testimonial__icon svg {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.splide__slide__contents p {
+  font-family: "Barlow Condensed";
+  font-size: 1.125rem;
+  margin: 0;
+  margin-bottom: 1.25rem;
+}
+
+.splide__slide_testimonial__attestant {
+  font-family: Barlow !important;
+}
+
+@media (min-width: 1080px) {
+  .splide__slide--testimonial__wrapper {
+    width: 40rem;
+    height: 22.5rem;
+  }
 }
 
 button.splide__arrow {
@@ -99,6 +157,7 @@ button.splide__arrow--next {
   margin-top: 1rem;
   align-items: center;
   padding: 0;
+  margin-bottom: 1.5rem !important;
 }
 
 /* dot styles */
@@ -125,5 +184,9 @@ button.splide__arrow--next {
 
   .splide__arrow {
     display: none !important;
+  }
+
+  .slider__background {
+    background: transparent;
   }
 }

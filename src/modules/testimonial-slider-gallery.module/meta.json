@@ -5,7 +5,7 @@
   "categories" : [ "media" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING", "CASE_STUDY" ],
   "module_id" : 270447130870,
-  "label" : "Image Slider",
+  "label" : "Testimonial Slider",
   "icon" : "../../../mV0_d-web-default-modules_hubspot/img/icon/gallery-module-icon.svg",
   "is_available_for_new_content" : true
 }
