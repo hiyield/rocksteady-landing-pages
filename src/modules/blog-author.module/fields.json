@@ -1,0 +1,7 @@
+[
+    {
+        "name": "author_job_title",
+        "label": "Author Job Title",
+        "type": "text"
+    }
+]

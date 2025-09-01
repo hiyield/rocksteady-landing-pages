@@ -1,0 +1,31 @@
+{% set blog_author = content.blog_post_author %}
+
+<div class="hy-author-card">
+    {% if blog_author.avatar %}
+        <img class="hy-author-card__image" src="{{ blog_author.avatar }}" alt="{{ blog_author.display_name }}">
+    {% endif %}
+
+    <div class="hy-author-card__info">
+        {% if blog_author.display_name %}
+        <h4 class="hy-author-card__name">
+            {{ blog_author.display_name }}
+        </h4>
+        {% endif %}
+
+        {% if module.author_job_title %}
+        <p class="hy-author-card__title">{{ module.author_job_title }}</p>
+        {% endif %}
+
+        {% if blog_author.bio %}
+        <div class="hy-author-card__description">
+            {{ blog_author.bio }}
+        </div>
+        {% endif %}
+
+        {% if blog_author.website %}
+        <a href="{{ blog_author.website }}" class="hy-button hy-button-purple">
+            View Author
+        </a>
+        {% endif %}
+    </div>
+</div>
