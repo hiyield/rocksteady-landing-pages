@@ -1,0 +1,69 @@
+{{ require_css("https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.2/dist/css/splide.min.css") }}
+{{ require_js("https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.2/dist/js/splide.min.js", "footer") }}
+
+{% set placeholder_images = {
+    'light_image': '@hubspot/img/slider-light-image.jpg',
+    'dark_image': '@hubspot/img/slider-dark-image.jpg'
+} %}
+
+{% set slides = [] %}
+
+{# Build slides array #}
+{% if module.slides %}
+    {% for slide in module.slides %}
+        {% if slide.img.src %}
+            {% set slide_image_src = resize_image_url(slide.img.src, 1200, 0, 1200) %}
+        {% else %}
+            {% set slide_image_src = loop.index is divisibleby 2
+                ? get_asset_url(placeholder_images.dark_image)
+                : get_asset_url(placeholder_images.light_image) %}
+        {% endif %}
+        {% do slides.append({
+            "alt_text": slide.img.alt,
+            "img_src": slide_image_src
+        }) %}
+    {% endfor %}
+{% endif %}
+
+{% if slides %}
+<div class="slider__container" data-gallery_slider="{{ name|escape_attr }}">
+    <section class="splide__main splide" aria-label="Image slider">
+        <div class="splide__arrows hs-gallery-slider-main__arrow">
+            <button class="splide__arrow splide__arrow--prev" aria-label="Previous slide">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2 2L34 0L36 36L0 34L2 2Z" fill="#252B5A"/>
+                    <path d="M13 18L21 13V23L13 18Z" fill="white"/>
+                </svg>
+            </button>
+            <button class="splide__arrow splide__arrow--next" aria-label="Next slide">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2 2L34 0L36 36L0 34L2 2Z" fill="#252B5A"/>
+                    <path d="M21 18L13 13V23L21 18Z" fill="white"/>
+                </svg>
+            </button>
+        </div>
+        <div class="splide__track">
+            <div class="splide__list">
+                {% for slide in slides %}
+                <div class="splide__slide">
+                    <div class="splide__slide__contents">
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# Custom Pagination #}
+    <div class="hy-custom-pagination" data-custom-pagination></div>
+</div>
+
+{% require_js position="head" %}
+<script data-gallery_slider-config="config_{{ name|escape_attr }}" type="application/json">
+    {
+        "instance_name": "config_{{ name|escapejson }}",
+    }
+</script>
+{% end_require_js %}
+{% endif %}
