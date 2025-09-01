@@ -1,0 +1,193 @@
+/** Base splide styles found here. https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.2/dist/css/splide.min.css **/
+
+.slider__container {
+  position: relative;
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider__background {
+  position: absolute;
+  width: 100%;
+  height: 12.5rem;
+}
+
+.splide__slide {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.splide__slide--nav {
+  height: auto;
+}
+
+.splide__slide--nav-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.splide__track--nav > .splide__list > .splide__slide {
+  border: none !important;
+  opacity: 0.5;
+}
+
+.splide__track--nav > .splide__list > .splide__slide.is-active {
+  border: none !important;
+  opacity: 1 !important;
+}
+
+.hy-testimonial-slider-splide__slide__contents {
+  position: relative;
+  min-height: 20rem;
+  height: auto;
+  width: 100%;
+  max-width: 31.25rem;
+  padding: 2.625rem 3rem;
+  background: linear-gradient(290.5deg, #5F2467 1.19%, #009FE3 98.81%);
+  color: white;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  -webkit-clip-path: polygon(2% 3%, 98% 0%, 100% 92%, 0% 90%);
+  clip-path: polygon(2% 3%, 98% 0%, 100% 92%, 0% 90%);
+  gap: 0 !important;
+}
+
+.splide__slide_testimonial__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.splide__slide_testimonial__icon svg {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.splide__slide__contents p {
+  font-family: "Barlow Condensed";
+  font-size: 1.125rem;
+  margin: 0;
+  margin-bottom: 1.25rem;
+}
+
+.splide__slide_testimonial__attestant {
+  font-family: Barlow !important;
+}
+
+@media (min-width: 1080px) {
+  .splide__slide--testimonial__wrapper {
+    width: 40rem;
+    height: 22.5rem;
+  }
+}
+
+button.splide__arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: flex;
+  height: 2em;
+  width: 2em;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  cursor: pointer;
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+button.splide__arrow svg {
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: #000;
+  transform: none !important;
+}
+
+button.splide__arrow--prev {
+  left: 0;
+}
+
+button.splide__arrow--next {
+  right: 0;
+}
+
+.splide__pagination__page {
+  background: transparent !important;
+  opacity: 0.5 !important;
+}
+
+.splide__pagination__page.is-active {
+  opacity: 1 !important;
+}
+
+.splide__toggle {
+  display: inline-flex;
+  height: 1.8rem;
+  width: 1.8rem;
+  padding: 1px 6px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  opacity: 0.7;
+  transition: background-color 0.2s ease;
+}
+
+.splide__toggle:hover { 
+  opacity: 1; 
+}
+
+.hy-custom-pagination {
+  display: none;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 1.5rem !important;
+}
+
+/* dot styles */
+.hy-custom-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0 !important;
+  border-radius: 100%;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+  box-shadow: none;
+}
+
+.hy-custom-dot.active {
+  background: #252B5A;
+}
+
+/* show hy-custom dots on mobile */
+@media (max-width: 1080px) {
+  .hy-custom-pagination {
+    display: flex;
+  }
+
+  .splide__arrow {
+    display: none !important;
+  }
+
+  .slider__background {
+    background: transparent;
+  }
+}

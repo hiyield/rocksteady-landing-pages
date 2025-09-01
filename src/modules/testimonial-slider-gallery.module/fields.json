@@ -1,0 +1,42 @@
+[
+  {
+    "id": "slides",
+    "name": "slides",
+    "label": "Testimonials",
+    "occurrence": {
+      "min": 0,
+      "max": 20,
+      "sorting_label_field": "slides.attestant_name",
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "slides.icon",
+        "name": "icon",
+        "label": "Testimonial Icon",
+        "type": "image",
+        "inline_help_text": "Upload an icon or image representing the testimonial.",
+        "default": {
+          "src": "",
+          "alt": "Testimonial icon"
+        }
+      },
+      {
+        "id": "slides.description",
+        "name": "description",
+        "label": "Testimonial Description",
+        "type": "richtext",
+        "inline_help_text": "Enter the testimonial text or description provided by the customer."
+      },
+      {
+        "id": "slides.attestant_name",
+        "name": "attestant_name",
+        "label": "Attestant Name",
+        "type": "text",
+        "inline_help_text": "Enter the name of the person giving the testimonial."
+      }
+    ],
+    "type": "group",
+    "tab": "CONTENT"
+  }
+]

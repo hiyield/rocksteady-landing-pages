@@ -71,7 +71,7 @@ button:disabled,
   background: #5F2467;
   color: white;
   -webkit-text-stroke: 0;
-  text-transform: normal;
+  text-transform: none !important;
 }
 
 /* On hover, swap costumes */
@@ -109,4 +109,3 @@ button:disabled,
   outline: 3px solid #5F2467;
   outline-offset: 3px;
 }
-

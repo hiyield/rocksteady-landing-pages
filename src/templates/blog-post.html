@@ -66,7 +66,7 @@
         </div>
 
         {% if content.url %}
-        <div class="hy-share-container">
+        <div class="hy-share-container desktop">
           <span>Share:</span>
           <div class="hy-social-links">
             {% if content.title %}
@@ -95,6 +95,27 @@
         {{ content.post_body }}
       </div>
       {% endif %}
+
+      {% if content.url %}
+        <div class="hy-prose-container hy-share-container mobile">
+          <span>Share this article:</span>
+          <div class="hy-social-links">
+            {% if content.title %}
+            <a class="hy-social-links__link" href="https://www.facebook.com/sharer/sharer.php?u={{ content.url }}&t={{ content.title }}" target="_blank" rel="noopener">
+              {% icon extra_classes="hy-social-links__icon", name="facebook", icon_set="fontawesome-6.4.2", purpose="semantic", style="SOLID", title="Facebook Icon", unique_in_loop=True %}
+            </a>
+
+            <a class="hy-social-links__link" href="https://x.com/intent/tweet?text={{ content.title }}&url={{ content.url }}" target="_blank" rel="noopener">
+              {% icon extra_classes="hy-social-links__icon", name="x-twitter", icon_set="fontawesome-6.4.2", purpose="semantic", style="SOLID", title="X Icon", unique_in_loop=True %}
+            </a>
+            {% endif %}
+
+            <a class="hy-social-links__link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ content.url }}" target="_blank" rel="noopener">
+              {% icon extra_classes="hy-social-links__icon", name="linkedin", icon_set="fontawesome-6.4.2", purpose="semantic", style="SOLID", title="LinkedIn Icon", unique_in_loop=True %}
+            </a>
+          </div>
+        </div>
+        {% endif %}
 
     </article>
   </div>

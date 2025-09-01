@@ -1,0 +1,37 @@
+[
+    {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "type": "image"
+    },
+    {
+        "name": "image_position",
+        "label": "Image Position",
+        "type": "boolean",
+        "default": true,
+        "display": "toggle",
+        "inline_help_text": "If enabled, image will be on the left. If disabled, image will be on the right."
+    },
+    {
+        "name": "content_vertical_align",
+        "label": "Content Vertical Align",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+            ["align-top", "Top"],
+            ["align-center", "Center"],
+            ["align-bottom", "Bottom"]
+        ],
+        "default": "align-top",
+        "inline_help_text": "Control vertical alignment of the content relative to the image."
+    },
+    {
+        "name": "content",
+        "label": "Content",
+        "required": false,
+        "locked": false,
+        "type": "richtext"
+    }
+]
