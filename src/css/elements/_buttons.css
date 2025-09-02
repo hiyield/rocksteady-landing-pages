@@ -44,7 +44,7 @@ button:disabled,
     white-space: nowrap;
     font-weight: 800;
     font-style: italic;
-    font-size: clamp(0.75rem, 1.125rem);
+    font-size: 1.125rem;
     border: 2px solid #fff;
     border-radius: 2rem;
     text-decoration: none;
