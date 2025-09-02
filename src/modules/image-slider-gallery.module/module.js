@@ -1,8 +1,8 @@
 /* global Splide */
+/* global MutationObserver */
 
 // This is a fallback config in the event that the module json config is not found in the DOM.
 const DEFAULT_MODULE_CONFIG = Object.freeze({
-  /* eslint-disable camelcase */
   show_thumbnails: 'false',
   show_main_arrows: 'true',
   loop_slides: 'false',
@@ -11,7 +11,6 @@ const DEFAULT_MODULE_CONFIG = Object.freeze({
   image_settings_sizing: 'static',
   image_settings_transition: 'slide',
   image_settings_caption_position: 'below',
-  /* eslint-enable camelcase */
 });
 
 const getModuleConfig = moduleName => {
@@ -20,6 +19,7 @@ const getModuleConfig = moduleName => {
     try {
       return JSON.parse(configJSONScript.textContent);
     } catch (e) {
+      console.error(e);
       // fallback to default module config if parse fails
       return DEFAULT_MODULE_CONFIG;
     }
