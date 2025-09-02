@@ -1,9 +1,9 @@
 import js from "@eslint/js";
 
 export default [
-  js.configs.recommended, // start with ESLint's recommended rules
+  js.configs.recommended,
   {
-    files: ["**/*.js"], // apply to JS files
+    files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -15,7 +15,6 @@ export default [
       },
     },
     rules: {
-      // keep your custom rules here
       "constructor-super": "error",
       "no-case-declarations": "error",
       "no-class-assign": "error",
@@ -58,7 +57,7 @@ export default [
       "no-useless-escape": "error",
       "require-yield": "error",
       "use-isnan": "error",
-      "valid-typeof": "error",
+      "valid-typeof": "error"
     },
   },
 ];
