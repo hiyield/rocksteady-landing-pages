@@ -48,10 +48,6 @@
     color: #2A2B33;
 }
 
-.hy-author-card__info .hy-button {
-    font-size: 1.5rem !important;
-}
-
 @media screen and (max-width: 768px) {
     .hy-author-card__name {
         margin-bottom: 1rem;
