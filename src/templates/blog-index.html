@@ -20,13 +20,13 @@
       {% set author_name = contents[0].blog_post_author.display_name %}
     {% endif %}
     <header class="hy-blog-index__header">
-      <h1 class="hy-blog-index__title">
+      <h1 class="hy-blog-index__title hy-uppercase">
         {{ post_count }} {{ post_count == 1 ? 'post' : 'posts' }}{% if author_name %} by {{ author_name|escape_html }}{% endif %}
       </h1>
     </header>
   {% else %}
     <header class="hy-blog-index__header">
-      <h1 class="hy-blog-index__title">BLOG</h1>
+      <h1 class="hy-blog-index__title hy-uppercase">Blog</h1>
     </header>
   {% endif %}
   <div class="hy-blog-related-posts__list">
@@ -40,7 +40,7 @@
         <div class="hy-blog-related-posts__content">
           <h3 class="hy-blog-related-posts__post-title">{{ post.name|escape }}</h3>
           <p class="hy-blog-related-posts__date">{{ post.publish_date|datetimeformat('%e %B %Y') }}</p>
-          <span class="hy-button hy-button-purple">Read article</span>
+          <span class="hy-button hy-button-purple">Read Article</span>
         </div>
       </a>
     {% endfor %}
