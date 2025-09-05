@@ -1,0 +1,33 @@
+[
+  {
+    "label": "Section title",
+    "name": "section_title",
+    "type": "text",
+    "default": "See more like this"
+  },
+  {
+    "label": "Posts",
+    "name": "posts",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 4,
+      "default": 3
+    },
+    "children": [
+      {
+        "label": "Post",
+        "name": "post",
+        "type": "link",
+        "supported_types": ["CONTENT"],
+        "required": true,
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "CONTENT"
+          }
+        }
+      }
+    ]
+  }
+]

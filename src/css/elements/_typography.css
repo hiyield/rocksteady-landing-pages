@@ -100,7 +100,7 @@ img {
   color: transparent; /* Fallback */
 }
 
-.hy-gradient-blue-green {
+.hy-gradient-lightblue-aqua {
   background: linear-gradient(135deg, #69C3C6 0%, #338988 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -108,7 +108,7 @@ img {
   color: transparent; /* Fallback */
 }
 
-.hy-gradient-blue {
+.hy-gradient-bluesky-ocean {
   background: linear-gradient(135deg, #009FE3 0%, #006DB0 100%);
   -webkit-background-clip: text;
   background-clip: text;

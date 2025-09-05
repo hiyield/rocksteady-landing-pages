@@ -1,0 +1,40 @@
+{#
+  Renders a related posts section using handpicked content IDs.
+  Reuses the same structure and classes as blog-post.html.
+#}
+
+<section class="hy-blog-related-posts content-wrapper">
+  <div class="hy-blog-related-posts__slant"></div>
+
+  <div class="hy-blog-related-posts__container">
+    <h2 class="hy-blog-related-posts__title">{{ module.section_title or 'See more like this' }}</h2>
+    <div class="hy-blog-related-posts__list">
+      {# Loop through provided content IDs and render posts #}
+      {% for ref in module.posts %}
+        {% set _id = ref.post.url.content_id if ref.post and ref.post.url else null %}
+        {% if _id %}
+          {% set post = content_by_id(_id) %}
+          {% if post and post.absolute_url %}
+            <a href="{{ post.absolute_url|escape_url }}" class="hy-blog-related-posts__post" aria-label="Blog post summary: {{ post.name|escape_attr }}">
+              {% if post.featured_image %}
+                <div class="hy-blog-related-posts__post-image-wrapper">
+                  <img class="hy-blog-related-posts__image" src="{{ post.featured_image|escape_url }}" loading="lazy" width="352" alt="{{ post.featured_image_alt_text|escape_attr }}">
+                </div>
+              {% endif %}
+              <div class="hy-blog-related-posts__content">
+                <h3 class="hy-blog-related-posts__post-title">
+                  {{ post.name|escape }}
+                </h3>
+                {% if post.publish_date %}
+                  <p class="hy-blog-related-posts__date">{{ post.publish_date|datetimeformat('%e %B %Y') }}</p>
+                {% endif %}
+                <span class="hy-button hy-button-purple">Read article</span>
+              </div>
+            </a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+</section>

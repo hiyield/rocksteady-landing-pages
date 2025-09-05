@@ -13,37 +13,9 @@
   {# Blog post #}
   <div class="content-wrapper">
     <article class="hy-blog-post">
-      <h1 class="hy-blog-post__title hy-gradient-purple-blue hy-prose-container">
-        {{ content.name|sanitize_html }}
-      </h1>
+      {% module "blog_title" path="../modules/blog-title", label="Blog Title", no_wrapper=True %}
 
-      {# Key takeaways section #}
-      <div class="hy-blog-post__key-takeaways">
-        <div class="hy-prose-container">
-          {% if content.featured_image %}
-          <div class="hy-image-container">
-            <img src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text|default('Blog featured image') }}" />
-          </div>
-          {% endif %}
-
-          <div class="hy-key-takeaways">
-            <div class="hy-key-takeaways-single">
-              <div class="hy-key-takeaways-seperator"></div>
-              {% module "blog_key_takeaway_1" path="@hubspot/text", label="Enter the first key takeaway point" %}
-            </div>
-
-            <div class="hy-key-takeaways-single">
-              <div class="hy-key-takeaways-seperator"></div>
-              {% module "blog_key_takeaway_2" path="@hubspot/text", label="Enter the secondary key takeaway point" %}
-            </div>
-
-            <div class="hy-key-takeaways-single">
-              <div class="hy-key-takeaways-seperator"></div>
-              {% module "blog_key_takeaway_3" path="@hubspot/text", label="Enter the third key takeaway point" %}
-            </div>
-          </div>
-        </div>
-      </div>
+      {% module "key_takeaways" path="../modules/key-takeaways", label="Key Takeaways", no_wrapper=True %}
 
       {# Meta section #}
       <div class="hy-blog-post__meta hy-prose-container">
@@ -54,15 +26,14 @@
           </time>
           {% endif %}
           
-          {% if content.blog_post_author %}
           <span class="hy-author-date-seperator">|</span>
+          
           <span>
             By
             <a href="{{ blog_author_url(group.id, content.blog_post_author.slug)|escape_url }}" rel="author">
               {{ content.blog_post_author.display_name|escape_html }}
             </a>
           </span>
-          {% endif %}
         </div>
 
         {% if content.url %}
@@ -120,42 +91,7 @@
     </article>
   </div>
 
-  <section class="hy-blog-related-posts content-wrapper">
-      
-  <div class="hy-blog-related-posts__slant"></div>
-  
-  <div class="hy-blog-related-posts__container">
-    <h2 class="hy-blog-related-posts__title">See more like this</h2>
-    <div class="hy-blog-related-posts__list">
-
-      {# Step 1: Fetch the 5 most recent posts from this blog #}
-      {% set recent_posts_list = blog_recent_posts(group.id, 5) %}
-
-      {# Step 2: Loop through the list, but filter out the current post being viewed #}
-      {% for post in recent_posts_list if post.content_id != content.id %}
-
-          {# Step 3: Render the HTML for each post. The loop will automatically limit itself to 4 posts. #}
-          <a href="{{ post.absolute_url|escape_url }}" class="hy-blog-related-posts__post" aria-label="Blog post summary: {{ post.name|escape_attr }}">
-            {% if post.featured_image %}
-              <div class="hy-blog-related-posts__post-image-wrapper">
-                <img class="hy-blog-related-posts__image" src="{{ post.featured_image|escape_url }}" loading="lazy" width="352" alt="{{ post.featured_image_alt_text|escape_attr }}">
-              </div>
-            {% endif %}
-            <div class="hy-blog-related-posts__content">
-              <h3 class="hy-blog-related-posts__post-title">
-                {{ post.name|escape }}
-              </h3>
-              <p class="hy-blog-related-posts__date">{{ post.publish_date|datetimeformat('%e %B %Y') }}</p>
-              <span class="hy-button hy-button-purple">Read article</span>
-            </div>
-          </a>
-        
-      {% endfor %}
-      
-    </div>
-  </div>
-
-</section>
+  {% module "related_posts" path="../modules/related-posts-handpicked", label="Related Posts", no_wrapper=True %}
 
 </div>
 {% endblock body %}
