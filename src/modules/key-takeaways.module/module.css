@@ -3,6 +3,7 @@
 }
 
 .hy-key-takeaways__single {
+  width: 100%;
   max-width: 20.9375rem;
 }
 
@@ -13,4 +14,14 @@
 
 .hy-key-takeaways p {
   margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 568px) {
+  .hy-key-takeaways__single {
+    max-width: 100%;
+  }
+
+  .hy-key-takeaways__rich {
+    max-width: 100%;
+  }
 }
