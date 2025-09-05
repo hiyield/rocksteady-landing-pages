@@ -1,17 +1,17 @@
 {% set _choice = module.background|default("purple") %}
 {# Map the three allowed backgrounds to fixed hex codes #}
 {% if _choice == "purple" %}
-  {% set _kt_bg = "#5F2467" %}
+  {% set key_takeaway_bg = "#5F2467" %}
 {% elif _choice == "aqua" %}
-  {% set _kt_bg = "#338988" %}
+  {% set key_takeaway_bg = "#338988" %}
 {% elif _choice == "ocean" %}
-  {% set _kt_bg = "#006DB0" %}
+  {% set key_takeaway_bg = "#006DB0" %}
 {% else %}
-  {% set _kt_bg = "#5F2467" %}
+  {% set key_takeaway_bg = "#5F2467" %}
 {% endif %}
 
 {# All three backgrounds are dark; use white text for contrast #}
-{% set _kt_text = "#FFFFFF" %}
+{% set key_takeaway_text = "#FFFFFF" %}
 
 <div class="hy-blog-post__key-takeaways">
   <div class="hy-prose-container">
@@ -21,27 +21,27 @@
       </div>
     {% endif %}
 
-    <div class="hy-key-takeaways {% if module.mode == "rich_text" %}hy-key-takeaways__rich{% else %}hy-key-takeaways__single{% endif %}" style="background-color: {{ _kt_bg }}; color: {{ _kt_text }};">
+    <div class="hy-key-takeaways {% if module.mode == "rich_text" %}hy-key-takeaways__rich{% else %}hy-key-takeaways__single{% endif %}" style="background-color: {{ key_takeaway_bg }}; color: {{ key_takeaway_text }};">
       {% if module.mode == "rich_text" %}
         {{ module.rich_text }}
       {% else %}
         {% if module.key_1 %}
         <div class="hy-key-takeaways-single">
-          <div class="hy-key-takeaways-seperator" style="background-color: {{ _kt_text }};"></div>
+          <div class="hy-key-takeaways-seperator" style="background-color: {{ key_takeaway_text }};"></div>
           {{ module.key_1 }}
         </div>
         {% endif %}
 
         {% if module.key_2 %}
         <div class="hy-key-takeaways-single">
-          <div class="hy-key-takeaways-seperator" style="background-color: {{ _kt_text }};"></div>
+          <div class="hy-key-takeaways-seperator" style="background-color: {{ key_takeaway_text }};"></div>
           {{ module.key_2 }}
         </div>
         {% endif %}
 
         {% if module.key_3 %}
         <div class="hy-key-takeaways-single">
-          <div class="hy-key-takeaways-seperator" style="background-color: {{ _kt_text }};"></div>
+          <div class="hy-key-takeaways-seperator" style="background-color: {{ key_takeaway_text }};"></div>
           {{ module.key_3 }}
         </div>
         {% endif %}
