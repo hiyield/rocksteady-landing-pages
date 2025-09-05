@@ -570,11 +570,16 @@ tfoot td {
 {###########################################################################}
 
 .footer {
-  background-color: {{ footer_bg_color }};
+  position: relative;
+  background-color: #F1F1F1;
 }
 
-.footer-slant {
+.footer__slant {
+  position: absolute;
+  inset: 0;
+  background-color: {{ footer_bg_color }};
   clip-path: polygon(0 2vw, 100% 0, 100% 100%, 0% 100%);
+  z-index: 1;
 }
 
 /* Footer content */
@@ -593,6 +598,11 @@ tfoot td {
   color: {{ footer_font_color }};
   font-family: {{ secondary_font }};
   font-style: italic;
+}
+
+.footer__container {
+  position: relative;
+  z-index: 2;
 }
 
 {###########################################################################}

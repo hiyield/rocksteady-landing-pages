@@ -49,9 +49,7 @@
                 {% for slide in module.slides %}
                 <div class="splide__slide">
                     <div class="hy-testimonial-slider-splide__slide__contents">
-                        {% if slide.icon.src %}
-                        <img src="{{ slide.icon.src }}" alt="{{ slide.icon.alt }}" class="splide__slide_testimonial__icon"/>
-                        {% endif %}
+                        <img src="{{ get_asset_url('../../images/module-icons/quote.svg') }}" alt="Quote Icon" class="splide__slide_testimonial__icon"/>
 
                         {% if slide.description %}
                         <p>
