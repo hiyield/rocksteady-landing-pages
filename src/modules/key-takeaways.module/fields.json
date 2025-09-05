@@ -1,21 +1,45 @@
 [
   {
-    "label": "Key Takeaways",
-    "name": "key_takeaways",
-    "type": "group",
-    "occurrence": {
-      "default": 3,
-      "min": 1,
-      "max": 10
-    },
-    "children": [
-      {
-        "label": "Takeaway",
-        "name": "takeaway",
-        "type": "richtext",
-        "required": true,
-        "default": "Add a key takeaway here"
-      }
-    ]
+    "label": "Mode",
+    "name": "mode",
+    "type": "choice",
+    "display": "select",
+    "choices": [
+      ["three_points", "Three key takeaways"],
+      ["rich_text", "Single rich text block"]
+    ],
+    "default": "three_points"
+  },
+  {
+    "label": "Background",
+    "name": "background",
+    "type": "choice",
+    "display": "select",
+    "choices": [
+      ["purple", "Deep Purple"],
+      ["aqua", "Aqua"],
+      ["ocean", "Ocean"]
+    ],
+    "default": "purple"
+  },
+  {
+    "label": "Key takeaway 1",
+    "name": "key_1",
+    "type": "text"
+  },
+  {
+    "label": "Key takeaway 2",
+    "name": "key_2",
+    "type": "text"
+  },
+  {
+    "label": "Key takeaway 3",
+    "name": "key_3",
+    "type": "text"
+  },
+  {
+    "label": "Description (Single Text Enabled)",
+    "name": "rich_text",
+    "type": "richtext"
   }
 ]

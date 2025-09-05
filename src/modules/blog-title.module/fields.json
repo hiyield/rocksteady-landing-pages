@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Title text color",
+    "name": "title_text_color",
+    "type": "choice",
+    "display": "select",
+    "choices": [
+      ["gradient-purple-blue", "Gradient (Purple → Blue)"],
+      ["gradient-lightblue-aqua", "Gradient (Light Blue → Aqua)"],
+      ["gradient-bluesky-ocean", "Gradient (Blue Sky → Ocean)"]
+    ],
+    "default": "gradient-purple-blue"
+  }
+]

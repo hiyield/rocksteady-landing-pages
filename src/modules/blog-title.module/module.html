@@ -1,0 +1,13 @@
+{% set _title_choice = module.title_text_color|default("gradient-purple-blue") %}
+{% set _title_classes = "hy-blog-post__title hy-prose-container" %}
+{% set _title_style = "" %}
+
+{% if _title_choice == "gradient-purple-blue" %}
+  {% set _title_classes = _title_classes ~ " hy-gradient-purple-blue" %}
+{% elif _title_choice == "gradient-lightblue-aqua" %}
+  {% set _title_classes = _title_classes ~ " hy-gradient-lightblue-aqua" %}
+{% elif _title_choice == "gradient-bluesky-ocean" %}
+  {% set _title_classes = _title_classes ~ " hy-gradient-bluesky-ocean" %}
+{% endif %}
+
+<h1 class="{{ _title_classes }}" style="{{ _title_style }}">{{ content.name|sanitize_html }}</h1>
