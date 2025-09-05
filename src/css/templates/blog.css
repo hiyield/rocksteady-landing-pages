@@ -8,8 +8,8 @@
 
 .body-container.body-container--blog-post .content-wrapper {
   background-color: white;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3.125rem;
+  padding-bottom: 3.75rem;
 }
 
 .hy-blog-post__title {
@@ -150,6 +150,11 @@
 .hy-blog-related-posts {
   position: relative;
   width: 100%;
+}
+
+.hy-blog-related-posts.content-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .hy-blog-related-posts__post {
