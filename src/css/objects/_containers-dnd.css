@@ -1,7 +1,20 @@
 .content-wrapper {
   max-width: 84.375rem !important;
-  width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1480px) {
+  .content-wrapper {
+    max-width: 1480px !important;
+    margin: 0 2.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .content-wrapper {
+    max-width: 450px !important;
+    margin: 0 !important;
+  }
 }
 
 .dnd-section > .row-fluid {

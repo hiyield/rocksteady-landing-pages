@@ -2,7 +2,10 @@
   templateType: global_partial
   label: Footer
 -->
-<footer class="footer footer-slant">
+<div class="footer-container">
+<footer class="footer">
+  <div class="footer__slant" aria-hidden="true"></div>
+
   {% dnd_area "footer"
     label="Footer",
     class="footer__container content-wrapper"
@@ -29,3 +32,4 @@
 
   {% end_dnd_area %}
 </footer>
+</div>

@@ -8,8 +8,8 @@
 
 .body-container.body-container--blog-post .content-wrapper {
   background-color: white;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3.125rem;
+  padding-bottom: 3.75rem;
 }
 
 .hy-blog-post__title {
@@ -152,6 +152,11 @@
   width: 100%;
 }
 
+.hy-blog-related-posts.content-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .hy-blog-related-posts__post {
   text-decoration: none !important;
 }
@@ -204,15 +209,26 @@
   margin-bottom: 3.5rem;
 }
 
+.hy-blog-index__section .hy-blog-related-posts__list {
+  padding: 0 2rem;
+}
+
 .hy-blog-related-posts__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);  
   gap: 2rem;
   width: 100%;
 }
 
+@media screen and (max-width: 1080px) {
+  .hy-blog-related-posts__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .hy-blog-related-posts__post {
   background: #F1F1F1;
+  width: 100%;
   overflow: hidden;
   display: flex;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -294,6 +310,8 @@
 
   .hy-blog-related-posts__list {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 0;
   }
@@ -336,3 +354,19 @@
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+/* Blog index specific spacing/header (does not affect related-posts section in blog-post) */
+.hy-blog-index__section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.hy-blog-index__header {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.hy-blog-index__title {
+  margin: 0;
+}
