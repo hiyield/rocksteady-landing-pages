@@ -8,7 +8,10 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-{% dnd_area "dnd_area"
+{% set is_author_listing = 'author/' in request.path %}
+
+{% if not is_author_listing %}
+{% dnd_area "blog_index_hero_area"
   label="Main section",
   class="body-container body-container--blog-index"
 %}
@@ -51,22 +54,40 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {# Blog listings and pagination #}
-
-  {% dnd_section
-    vertical_alignment="TOP"
-  %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module path="@hubspot/blog_posts" %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_module path="@hubspot/pagination" %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
-
 {% end_dnd_area %}
+{% endif %}
+
+<div class="body-container body-container--blog-post">
+{# Blog listings and pagination (custom cards matching related posts) #}
+<section class="content-wrapper hy-blog-index__section">
+  {% if is_author_listing %}
+    {% set post_count = contents|length %}
+    {% set author_name = "" %}
+    {% if contents and contents|length > 0 and contents[0].blog_post_author %}
+      {% set author_name = contents[0].blog_post_author.display_name %}
+    {% endif %}
+    <header class="hy-blog-index__header">
+      <h1 class="hy-blog-index__title">
+        {{ post_count }} {{ post_count == 1 ? 'post' : 'posts' }}{% if author_name %} by {{ author_name|escape_html }}{% endif %}
+      </h1>
+    </header>
+  {% endif %}
+  <div class="hy-blog-related-posts__list">
+    {% for post in contents %}
+      <a href="{{ post.absolute_url|escape_url }}" class="hy-blog-related-posts__post" aria-label="Blog post summary: {{ post.name|escape_attr }}">
+        {% if post.featured_image %}
+          <div class="hy-blog-related-posts__post-image-wrapper">
+            <img class="hy-blog-related-posts__image" src="{{ post.featured_image|escape_url }}" loading="lazy" width="352" alt="{{ post.featured_image_alt_text|escape_attr }}">
+          </div>
+        {% endif %}
+        <div class="hy-blog-related-posts__content">
+          <h3 class="hy-blog-related-posts__post-title">{{ post.name|escape }}</h3>
+          <p class="hy-blog-related-posts__date">{{ post.publish_date|datetimeformat('%e %B %Y') }}</p>
+          <span class="hy-button hy-button-purple">Read article</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+</div>
 {% endblock body %}
