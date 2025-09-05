@@ -22,8 +22,8 @@
         </div>
         {% endif %}
 
-        {% if blog_author.website %}
-        <a href="{{ blog_author.website }}" class="hy-button hy-button-purple">
+        {% if blog_author.slug %}
+        <a href="{{ blog_author_url(group.id, blog_author.slug)|escape_url }}" class="hy-button hy-button-purple" rel="author">
             View Author
         </a>
         {% endif %}
