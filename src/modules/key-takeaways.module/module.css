@@ -8,4 +8,9 @@
 
 .hy-key-takeaways__rich {
   max-width: 27.9375rem;
+  display: block !important;
+}
+
+.hy-key-takeaways p {
+  margin-bottom: 0 !important;
 }
