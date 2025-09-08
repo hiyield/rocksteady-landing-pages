@@ -152,20 +152,32 @@
 }
 
 .hy-blog-related-posts.content-wrapper {
+  position: relative;
+  z-index: 0;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+
+.hy-blog-related-posts.content-wrapper::after {
+  content: "";
+  position: absolute;
+  transform: translateY(2rem);
+  width: 100%;
+  bottom: 0;
+  background: #fff; /* Overlays into the footer over the clip path but not the rest of the background */
+  height: 2rem;
+  z-index: 1;
 }
 
 .hy-blog-related-posts__post {
   text-decoration: none !important;
 }
 
-.hy-blog-related-posts__slant {
+.hy-blog-related-posts__half_background {
   position: absolute;
-  min-height: 21.25rem;
+  height: 21.25rem;
   inset: 0;
   background-color: {{primary_color}};
-  clip-path: polygon(0 2vw, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
 }
 
