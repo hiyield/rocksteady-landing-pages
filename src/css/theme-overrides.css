@@ -362,7 +362,22 @@ form,
 
 .hsfc-TextInput, .hsfc-TextareaInput {
   border: none !important;
+  outline: 3px solid transparent !important;
   border-radius: 0 !important;
+}
+
+.hsfc-TextInput:focus-visible, .hsfc-TextareaInput:focus-visible {
+  outline: 3px solid #252B5A !important;
+}
+
+.hsfc-Row .hsfc-ErrorAlert {
+  display: none !important;
+}
+
+.hsfc-ErrorAlert {
+  font-family: Barlow !important;
+  font-weight: 600 !important;
+  color: #FF8A8A !important;
 }
 
 .hsfc-Button {
@@ -387,6 +402,11 @@ form,
     background: #fff !important;
     color: #252B5A !important;
     -webkit-text-stroke: 0 !important;
+}
+
+.hsfc-Button:focus-visible {
+  outline: 3px solid #fff !important;
+  outline-offset: 3px !important;
 }
 
 .hsfc-NavigationRow__Buttons {
