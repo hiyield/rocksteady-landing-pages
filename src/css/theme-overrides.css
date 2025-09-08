@@ -880,29 +880,8 @@ tfoot td {
 
 .hy-form-wrapper .content-wrapper {
   position: relative;
-  z-index: 0; /* baseline for content stacking */
+  z-index: 0;
   background-color: rgba(105, 195, 198, 0.2) !important;
   padding-bottom: 0 !important;
-}
-
-/* Low underlay background (behind everything, like the blue layer in your footer) */
-.hy-form-wrapper .content-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(105, 195, 198, 0.2);
-  z-index: -1; /* behind page content */
-}
-
-/* Overlay “cap” that cuts into the previous section (like your blog block ::after) */
-.hy-form-wrapper .content-wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2rem; /* tweak as needed */
-  transform: translateY(2rem); /* overlap upwards into the section above */
-  background: #fff; /* acts as the cut-off color */
-  z-index: 1; /* sits on top of related posts/previous section */
 }
 
