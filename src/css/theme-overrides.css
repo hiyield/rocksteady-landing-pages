@@ -906,7 +906,13 @@ tfoot td {
 .hy-form-wrapper .content-wrapper {
   position: relative;
   z-index: 0;
-  background-color: rgba(105, 195, 198, 0.2) !important;
+  background-color: #fff;
   padding-bottom: 0 !important;
+}
+
+.hy-form {
+  background: rgba(105, 195, 198, 0.2) !important;
+  width: 100%;
+  height: 100%;
 }
 
