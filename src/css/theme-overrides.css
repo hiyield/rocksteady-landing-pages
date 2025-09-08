@@ -331,7 +331,32 @@ form,
   display: none !important;
 }
 
+.body-container:not(:has(.hsfc-Step__Content)) .hy-blog-related-posts .hy-prose-container {
+  display: none !important;
+}
+
+.body-container:not(:has(.hsfc-Step__Content)) .hy-blog-related-posts .hy-blog-related-posts__slant_color {
+  background: #fff !important;
+}
+
+.hsfc-Step {
+  position: relative;
+  z-index: 2;
+}
+
+.hsfc-Step::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  transform: translateY(2rem);
+  background: #338988;
+}
+
 .hsfc-Step__Content {
+  position: relative;
+  z-index: 20;
   padding: 0 7rem !important;
   padding-bottom: 7rem !important;
   background-color: #338988;
@@ -650,15 +675,29 @@ tfoot td {
 
 .footer {
   position: relative;
-  background-color: #F1F1F1;
 }
 
-.footer__slant {
+.footer::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background-color: {{ footer_bg_color }};
+  background: #F1F1F1; /* Same colour as outside container */
+  z-index: -1;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: {{ footer_bg_color }}; /* Footer background colour */
   clip-path: polygon(0 2vw, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
+}
+
+.footer .footer__container,
+.footer > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* Footer content */
@@ -867,14 +906,13 @@ tfoot td {
 .hy-form-wrapper .content-wrapper {
   position: relative;
   z-index: 0;
-  background-color: rgba(105, 195, 198, 0.2) !important;
+  background-color: #fff;
   padding-bottom: 0 !important;
 }
 
-.hy-form-wrapper .hy-prose-container {
-  transform: translateY(2.5rem);
+.hy-form {
+  background: rgba(105, 195, 198, 0.2) !important;
+  width: 100%;
+  height: 100%;
 }
 
-/* .hy-form-wrapper + .content-wrapper {
-  background-color: rgba(105, 195, 198, 0.2) !important;
-} */
