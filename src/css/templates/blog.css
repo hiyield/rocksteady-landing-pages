@@ -209,6 +209,11 @@
   margin-bottom: 3.5rem;
 }
 
+.hy-blog-index__section {
+  height: 100%;
+  flex: 1;
+}
+
 .hy-blog-index__section .hy-blog-related-posts__list {
   padding: 0 2rem;
 }

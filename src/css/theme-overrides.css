@@ -880,8 +880,16 @@ tfoot td {
   min-height: 100vh;
 }
 
-.body-container-wrapper {
+.body-container-wrapper:has(.hy-blog-index__section) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.body-container:has(.hy-blog-index__section) {
   flex: 1;
+  display: flex;
+  flex-direction: column
 }
 
 .hy-form-wrapper .content-wrapper {
