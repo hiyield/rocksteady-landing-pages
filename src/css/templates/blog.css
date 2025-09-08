@@ -157,7 +157,7 @@
   height: 21.25rem;
   z-index: 0;
   inset: 0;
-  background-color: rgba(105, 195, 198, 0.2);
+  background-color: rgba(105, 195, 198, 0.3);
 }
 
 .hy-blog-related-posts .hy-prose-container {
@@ -178,11 +178,11 @@
 .hy-blog-related-posts.content-wrapper::after {
   content: "";
   position: absolute;
-  transform: translateY(2rem);
+  transform: translateY(8rem);
   width: 100%;
   bottom: 0;
   background: #fff; /* Overlays into the footer over the clip path but not the rest of the background */
-  height: 2rem;
+  height: 12rem;
   z-index: 1;
 }
 
