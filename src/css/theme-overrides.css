@@ -331,7 +331,32 @@ form,
   display: none !important;
 }
 
+.body-container:not(:has(.hsfc-Step__Content)) .hy-blog-related-posts .hy-prose-container {
+  display: none !important;
+}
+
+.body-container:not(:has(.hsfc-Step__Content)) .hy-blog-related-posts .hy-blog-related-posts__slant_color {
+  background: #fff !important;
+}
+
+.hsfc-Step {
+  position: relative;
+  z-index: 2;
+}
+
+.hsfc-Step::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  transform: translateY(2rem);
+  background: #338988;
+}
+
 .hsfc-Step__Content {
+  position: relative;
+  z-index: 20;
   padding: 0 7rem !important;
   padding-bottom: 7rem !important;
   background-color: #338988;
